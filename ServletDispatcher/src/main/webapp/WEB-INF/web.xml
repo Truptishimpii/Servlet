@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>ServletDispatcher</display-name>
+  <servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>cwpc.HomeServlet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>AboutServlet</servlet-name>
+    <servlet-class>cwpc.AboutServlet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>ServletDispatcher</servlet-name>
+    <servlet-class>cwpc.ServletDispatcher</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ServletDispatcher</servlet-name>
+    <url-pattern>/app/*</url-pattern>
+</servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>HomeServlet</display-name>
+    <servlet-name>/HomeServlet</servlet-name>
+    <servlet-class>cwpc.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>AboutServlet</display-name>
+    <servlet-name>/AboutServlet</servlet-name>
+    <servlet-class>cwpc.AboutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AboutServlet</servlet-name>
+    <url-pattern>/about</url-pattern>
+  </servlet-mapping>
+   <error-page>
+   <error-code>404</error-code>
+   <location>/error.jsp</location>
+ </error-page>
+<error-page>
+ <exception-type>java.lang.Throwable</exception-type>
+   <location>/error.jsp</location>
+ </error-page>
+  
+  
+</web-app>
